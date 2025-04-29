@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio criativo de Rafael Alves de Oliveira">
+    <meta name="description" content="Portfólio pessoal de Rafael Alves de Oliveira">
     <title>Rafael Alves de Oliveira | Portfólio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
@@ -105,14 +105,14 @@
             position: relative;
         }
 
-        .home, .about {
+        .home, .about, .section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
 
-        .home-content, .about-content {
+        .home-content, .about-content, .section-content {
             max-width: 600px;
             position: relative;
             z-index: 1;
@@ -138,6 +138,16 @@
             margin: 25px 0;
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .social-icons {
@@ -193,8 +203,15 @@
             animation: float 15s ease-in-out infinite;
         }
 
+        audio, video {
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+
         @media (max-width: 768px) {
-            .home, .about {
+            .home, .about, .section {
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding-top: 150px;
@@ -237,6 +254,9 @@
         <nav class="nav">
             <a href="#home">Home</a>
             <a href="#about">Sobre</a>
+            <a href="#formacao">Formação</a>
+            <a href="#profissional">Atuação</a>
+            <a href="#hobbies">Hobbies</a>
         </nav>
     </header>
 
@@ -250,29 +270,78 @@
                 Minha abordagem combina design intuitivo com tecnologia de ponta para resultados excepcionais.
             </p>
             <div class="social-icons">
-                <a href="#" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                <a href="#" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="docs/curriculo.pdf" download aria-label="Download Currículo"><i class='bx bxs-download'></i></a>
             </div>
         </div>
-        <img src="WhatsApp_Image_2025-04-12_at_17.05.17-removebg-preview.png" alt="Rafael Alves de Oliveira" class="profile-img floating">
-
+        <img src="WhatsApp_Image_2025-04-29_at_17.46.40-removebg-preview.png" alt="Rafael Alves de Oliveira" class="profile-img floating">
     </section>
 
     <section id="about" class="about">
         <div class="about-content">
-            <h3>Minha Jornada</h3>
-            <h1>Sobre Mim</h1>
+            <h1>Identificação</h1>
             <p>
-                Atualmente cursando Engenharia de Software, venho me dedicando ao desenvolvimento web full-stack, com foco em performance, usabilidade e aprendizado contínuo.
-
+                Meu nome é Rafael Alves de Oliveira, tenho 25 anos e sou natural de São Paulo. 
+                Sou uma pessoa curiosa, dedicada e sempre em busca de novos conhecimentos.
             </p>
-            <p>
-                Minha filosofia é simples: código limpo, design intuitivo e soluções escaláveis. 
-                Acredito que a melhor tecnologia é aquela que resolve problemas reais de forma elegante.
-            </p>
+           
         </div>
-        <img src="WhatsApp_Image_2025-04-12_at_17.05.17-removebg-preview.png" alt="Rafael Alves de Oliveira" class="profile-img floating">
+        <img src="WhatsApp_Image_2025-04-29_at_17.46.40-removebg-preview.png" alt="Rafael Alves de Oliveira" class="profile-img floating">
+    </section>
 
+    <section id="formacao" class="section">
+        <div class="section-content">
+            <h1>Formação Acadêmica</h1>
+            <ul>
+                <li>Análise e Desenvolvimento de Sistemas</li>
+               
+            </ul>
+            
+        </div>
+    </section>
+
+    <section id="profissional" class="section">
+        <div class="section-content">
+            <h1>Atuação Profissional</h1>
+            <p>
+                Atualmente estou em busca da minha primeira oportunidade na área de desenvolvimento. 
+                Possuo características como:
+            </p>
+            <ul>
+                <li>Capacidade de trabalhar em equipe</li>
+                <li>Raciocínio lógico desenvolvido</li>
+                <li>Facilidade para aprender novas tecnologias</li>
+                <li>Comprometimento com prazos e qualidade</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hobbies" class="section">
+        <div class="section-content">
+            <h1>Hobbies</h1>
+            <p>
+                Nas horas vagas, gosto de:
+            </p>
+            <ul>
+                <li>Jogar xadrez</li>
+                <li>Ler livros de ficção científica</li>
+                <li>Participar de maratonas de programação</li>
+                <li>Praticar esportes ao ar livre</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="section-content">
+            <h1>Contato</h1>
+            <p>Entre em contato comigo através dos links abaixo:</p>
+            <div class="social-icons">
+                <a href="mailto:rafael@email.com"><i class='bx bxs-envelope'></i></a>
+                <a href="tel:+5511999999999"><i class='bx bxs-phone'></i></a>
+                <a href="https://wa.me/5511999999999"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+        </div>
     </section>
 
     <script>
