@@ -210,6 +210,75 @@
             max-width: 500px;
         }
 
+        /* Estilos do Formulário de Contato */
+        .contact-form {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--main-color);
+            box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
         @media (max-width: 768px) {
             .home, .about, .section {
                 grid-template-columns: 1fr;
@@ -230,6 +299,11 @@
             .nav a {
                 margin-left: 15px;
                 font-size: 0.9rem;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                gap: 30px;
             }
         }
 
@@ -285,7 +359,6 @@
                 Meu nome é Rafael Alves de Oliveira, tenho 25 anos e sou natural de São Paulo. 
                 Sou uma pessoa curiosa, dedicada e sempre em busca de novos conhecimentos.
             </p>
-           
         </div>
         <img src="WhatsApp_Image_2025-04-29_at_17.46.40-removebg-preview.png" alt="Rafael Alves de Oliveira" class="profile-img floating">
     </section>
@@ -295,9 +368,7 @@
             <h1>Formação Acadêmica</h1>
             <ul>
                 <li>Análise e Desenvolvimento de Sistemas</li>
-               
             </ul>
-            
         </div>
     </section>
 
@@ -335,11 +406,35 @@
     <section id="contato" class="section">
         <div class="section-content">
             <h1>Contato</h1>
-            <p>Entre em contato comigo através dos links abaixo:</p>
-            <div class="social-icons">
-                <a href="mailto:rafael@email.com"><i class='bx bxs-envelope'></i></a>
-                <a href="tel:+5511999999999"><i class='bx bxs-phone'></i></a>
-                <a href="https://wa.me/5511999999999"><i class='bx bxl-whatsapp'></i></a>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Entre em contato comigo através do formulário ou dos links abaixo:</p>
+                    <div class="social-icons">
+                        <a href="mailto:rafael@email.com"><i class='bx bxs-envelope'></i></a>
+                        <a href="tel:+5511999999999"><i class='bx bxs-phone'></i></a>
+                        <a href="https://wa.me/5511999999999"><i class='bx bxl-whatsapp'></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
             </div>
         </div>
     </section>
@@ -394,6 +489,34 @@
                 bubble.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
                 
                 document.body.appendChild(bubble);
+            }
+
+            // Manipulação do formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    
+                    
+                    // Exemplo de feedback visual
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulando envio (substitua por código real de envio)
+                    setTimeout(() => {
+                        submitBtn.textContent = 'Mensagem Enviada!';
+                        submitBtn.style.background = '#4CAF50';
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            submitBtn.textContent = 'Enviar Mensagem';
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }, 1500);
+                });
             }
         });
     </script>
